@@ -3,7 +3,7 @@ Contributors: binsaifullah
 Tags: google map, map, map block, gmap block, gutenberg
 Requires at least: 6.0
 Tested up to: 6.7
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -32,9 +32,15 @@ Gmap Block is a custom Gutenberg block plugin to display Google map in Gutenberg
 
 
 == Changelog ==
+= 1.0.3 = 
+* Compatibility check
+* Minor bug fixes
+
 = 1.0.2 = 
 * Compatibility check
+
 = 1.0.1 =
 * Optimized: Dynamic CSS Styles
+
 = 1.0.0 =
 * Initial Release
