@@ -58,6 +58,13 @@ if ( ! class_exists( 'Gmap_Block_Dynamic_Style' ) ) {
 			if ( isset( $block['blockName'] ) && str_contains( $block['blockName'], 'gmap/' ) ) {
 				if ( isset( $block['attrs']['blockStyle'] ) ) {
 					$style = $block['attrs']['blockStyle'];
+					
+					// Ensure style is a string
+					if ( is_array( $style ) ) {
+						// If it's an array, skip processing or convert to string if needed
+						return $block_content;
+					}
+					
 					$this->enqueue_dynamic_styles( $style );
 				}
 			}
@@ -72,7 +79,7 @@ if ( ! class_exists( 'Gmap_Block_Dynamic_Style' ) ) {
 		 * @return void
 		 */
 		public function enqueue_dynamic_styles( $style ) {
-			if ( ! empty( $style ) ) {
+			if ( ! empty( $style ) && is_string( $style ) ) {
 				$handle = 'gmap-block-inline-style-' . wp_rand( 100, 10000 );
 				wp_register_style( $handle, false, array(), GMAP_VERSION, 'all' );
 				wp_enqueue_style( $handle, false, array(), GMAP_VERSION, 'all' );

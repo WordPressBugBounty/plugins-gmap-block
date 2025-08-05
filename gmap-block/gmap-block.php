@@ -3,7 +3,7 @@
  * Plugin Name: Gmap Block
  * Description: A custom Gutenberg block to display google map in Gutenberg editor.
  * Author: Zakaria Binsaifullah
- * Version: 1.0.4
+ * Version: 1.0.5
  * Text Domain: gmap-block
  * Domain Path: /languages
  * License: GPLv2 or later
@@ -25,6 +25,9 @@ if ( ! class_exists( 'Gmap_Block ' ) ) {
 	 * @package GmapBlock
 	 */
 	final class GmapBlock {
+
+		// Plugin Version 
+		const VERSION = '1.0.5';
 
 		/**
 		 * Gmap Blocks Instance
@@ -52,24 +55,16 @@ if ( ! class_exists( 'Gmap_Block ' ) ) {
 		 * @return void
 		 */
 		public function constants() {
-			if ( ! defined( 'GMAP_VERSION' ) ) {
-				define( 'GMAP_VERSION', '1.0.4' );
-			}
+			$this->define_constant( 'GMAP_VERSION', self::VERSION );
+			$this->define_constant( 'GMAP__FILE__', __FILE__ );
+			$this->define_constant( 'GMAP_URL_FILE', plugin_dir_url( __FILE__ ) );
+			$this->define_constant( 'GMAP_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+			$this->define_constant( 'GMAP_URL', plugins_url( '/', plugin_dir_path( __FILE__ ) ) );
+		}
 
-			if ( ! defined( 'GMAP__FILE__' ) ) {
-				define( 'GMAP__FILE__', __FILE__ );
-			}
-
-			if ( ! defined( 'GMAP_URL_FILE' ) ) {
-				define( 'GMAP_URL_FILE', plugin_dir_url( GMAP__FILE__ ) );
-			}
-
-			if ( ! defined( 'GMAP_PLUGIN_DIR' ) ) {
-				define( 'GMAP_PLUGIN_DIR', plugin_dir_path( GMAP__FILE__ ) );
-			}
-
-			if ( ! defined( 'GMAP_URL' ) ) {
-				define( 'GMAP_URL', plugins_url( '/', GMAP_PLUGIN_DIR ) );
+		private function define_constant( $name, $value ) {
+			if ( ! defined( $name ) ) {
+				define( $name, $value );
 			}
 		}
 
@@ -114,6 +109,7 @@ if ( ! class_exists( 'Gmap_Block ' ) ) {
 		 * @return void
 		 */
 		private function includes() {
+			require_once trailingslashit( GMAP_PLUGIN_DIR ) . 'sdk/sdk.php';
 			require_once trailingslashit( GMAP_PLUGIN_DIR ) . 'inc/gmap-block-loader.php';
 		}
 	}

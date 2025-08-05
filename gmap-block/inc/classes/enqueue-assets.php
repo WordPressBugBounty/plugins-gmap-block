@@ -48,10 +48,6 @@ if ( ! class_exists( 'Gmap_Block_Assets' ) ) {
 		 */
 		public function enqueue_editor_assets() {
 
-			if ( ! is_admin() ) {
-				return;
-			}
-			
 			// global
 			if ( file_exists( trailingslashit( GMAP_PLUGIN_DIR ) . '/build/global/index.asset.php' ) ) {
 				$globalDependencies = require_once trailingslashit( GMAP_PLUGIN_DIR ) . '/build/global/index.asset.php';
@@ -68,6 +64,18 @@ if ( ! class_exists( 'Gmap_Block_Assets' ) ) {
 					array(),
 					GMAP_VERSION,
 					'all'
+				);
+			}
+
+			// modules 
+			if ( file_exists( trailingslashit( GMAP_PLUGIN_DIR ) . '/build/modules/index.asset.php' ) ) {
+				$moduleDependencies = require_once trailingslashit( GMAP_PLUGIN_DIR ) . '/build/modules/index.asset.php';
+				wp_enqueue_script(
+					'gmap-block-module-script',
+					trailingslashit( GMAP_URL_FILE ) . 'build/modules/index.js',
+					$moduleDependencies['dependencies'],
+					GMAP_VERSION,
+					false
 				);
 			}
 		}
