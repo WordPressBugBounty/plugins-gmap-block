@@ -78,6 +78,10 @@ if ( ! class_exists( 'Gmap_Block_Assets' ) ) {
 					false
 				);
 			}
+
+			wp_localize_script( 'gmap-block-global-script', 'gmapBlockPro', array(
+				'has_pro' => defined( 'GMAP_PRO_VERSION' ) ? true : false,
+			) );
 		}
 
 	}

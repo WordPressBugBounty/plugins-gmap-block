@@ -41,11 +41,6 @@ if ( ! class_exists( 'Gmap_Block_Loader' ) ) {
 			require_once trailingslashit( GMAP_PLUGIN_DIR ) . '/inc/classes/register-blocks.php';
 			require_once trailingslashit( GMAP_PLUGIN_DIR ) . '/inc/classes/enqueue-assets.php';
 			require_once trailingslashit( GMAP_PLUGIN_DIR ) . '/inc/classes/dynamic-style.php';
-
-			// Gmap Admin
-			// if( is_admin() ) {
-			// require_once trailingslashit( GMAP_PLUGIN_DIR ) . '/inc/admin/admin.php';
-			// }
 		}
 	}
 	

@@ -1,0 +1,361 @@
+/*
+* Base CSS for all controls
+*/
+
+.components-popover {
+    z-index: 99999 !important;
+}
+
+// Controls Container
+.gmap-control-container {
+    margin-bottom: 16px;
+    .components-flex {
+        margin-bottom: 8px;
+        width: 100%;
+    }
+
+    &.nx-box {
+        .components-flex {
+            align-items: center;
+        }
+    }
+
+    .components-input-control__input {
+        height: 36px !important;
+        min-height: 36px !important;
+        text-align: center !important;
+    }
+}
+
+.gmap-btn {
+    &:focus {
+        outline: none !important;
+        box-shadow: none !important;
+    }
+}
+
+// Margin Bottom
+.gmap-mb-0 {
+    margin-bottom: 0;
+}
+
+.gmap-mb-8 {
+    margin-bottom: 8px;
+}
+
+.gmap-mb-12 {
+    margin-bottom: 12px;
+}
+
+.gmap-mb-16 {
+    margin-bottom: 16px;
+}
+
+.gmap-mb-24 {
+    margin-bottom: 24px;
+}
+
+// Padding Bottom
+.gmap-pb-0 {
+    padding-bottom: 0;
+}
+
+// Display
+.gmap-inline-block {
+    display: inline-block;
+}
+
+.gmap-block {
+    display: block;
+}
+
+// Buttons Group
+.gmap-btn-group {
+    &.gmap-full-group {
+        width: 100%;
+        display: flex;
+        .components-button {
+            width: 100%;
+            padding: 0;
+            justify-content: center;
+        }
+    }
+    .components-button {
+        box-shadow: inset 0 0 0 1px #e0e0e0;
+        font-size: 11px;
+        text-transform: capitalize;
+        font-weight: 500;
+        box-sizing: border-box;
+        height: 30px;
+        &:focus {
+            outline: none;
+            box-shadow: inset 0 0 0 1px #e0e0e0;
+        }
+        &.active {
+            background: #eee;
+            color: #014568;
+        }
+    }
+}
+
+// label
+.gmap-label {
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase !important;
+    display: inline-block;
+}
+
+// reset button
+.gmap-reset-button {
+    width: 12px;
+    padding: 0 !important;
+    margin: 0 !important;
+    min-width: unset !important;
+    height: auto !important;
+    color: #2563eb;
+    &:focus {
+        outline: none !important;
+        box-shadow: none !important;
+    }
+    &.disabled {
+        cursor: not-allowed;
+        .dashicon {
+            color: #e0e0e0;
+        }
+    }
+    &.active {
+        .dashicon {
+            color: #2563eb;
+        }
+    }
+    .dashicon {
+        font-size: 12px;
+        line-height: 20px;
+    }
+}
+
+.gmap-reset-control {
+    .components-base-control__field {
+        margin-bottom: 0 !important;
+    }
+    .components-range-control__wrapper span[aria-hidden='true'] {
+        height: 2px !important;
+    }
+    .components-range-control__thumb-wrapper {
+        height: 8px !important;
+        width: 8px !important;
+        margin-top: 10px !important;
+
+        span:before {
+            height: 12px !important;
+            width: 12px !important;
+            left: -2px !important;
+            top: -5px !important;
+        }
+    }
+    .components-simple-tooltip {
+        display: none !important;
+    }
+}
+
+// editor icon
+.gmap-editor-icon {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    &:focus {
+        outline: none;
+        box-shadow: none !important;
+    }
+    svg,
+    .dashicon {
+        width: 16px;
+        font-size: 12px;
+        line-height: 20px;
+    }
+    &.active-btn {
+        background-color: #f3f4f5;
+        svg {
+            fill: #2563eb;
+        }
+    }
+}
+
+// Control unit
+.gmap-control-container {
+    // margin-bottom: 16px;
+    .components-flex {
+        // padding-bottom: 8px;
+        .gmap-units-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            .unit-btn {
+                background: none;
+                border: none;
+                cursor: pointer;
+                font-size: 10px;
+                font-weight: 600;
+                text-transform: uppercase;
+                margin: 0;
+                padding: 0;
+                &.active {
+                    color: #2563eb;
+                }
+            }
+        }
+    }
+
+    // control label
+    // .components-base-control__label,
+    .components-base-control__field {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+}
+
+// Popover
+.gmap-popover {
+    .components-input-control__backdrop {
+        border: 1px solid #e5e5e5 !important;
+    }
+}
+
+// inner popover
+.gutslider-inner-popover {
+    width: 250px;
+    padding: 10px;
+    .gmap-control-container {
+        margin: 0;
+    }
+}
+
+.gmap-res-btn {
+    .components-button-group {
+        margin-bottom: 0 !important;
+    }
+}
+
+// custom help
+.gmap_custom__help {
+    margin-top: 8px;
+    font-size: 12px;
+    color: #999;
+    font-style: italic;
+    display: block;
+}
+
+// gmap reset range control
+.gmap-reset-control {
+    .components-range-control__track {
+        color: #2563eb !important;
+    }
+    .components-range-control__thumb-wrapper {
+        background-color: #2563eb !important;
+    }
+}
+
+// style copy-paste
+.gmap-copy-paste-styles-popover {
+    .components-popover__content {
+        width: 150px;
+        svg {
+            margin-right: 5px;
+            width: 16px;
+        }
+    }
+}
+
+// editor responsive canvas
+
+//class="edit-post-visual-editor has-inline-canvas gmap-desktop"
+.edit-post-visual-editor.has-inline-canvas {
+    &.gmap-tablet > div {
+        width: 768px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        .editor-styles-wrapper.has-global-padding {
+            padding: 0 20px !important;
+        }
+    }
+    &.gmap-mobile > div {
+        width: 360px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        .editor-styles-wrapper.has-global-padding {
+            padding: 0 20px !important;
+        }
+    }
+}
+
+// Editor Append Button
+.nx-append-btn {
+    background: #2d62ff;
+    border: none;
+    line-height: 1;
+    height: 50px;
+    width: 150px;
+    border-radius: 3px;
+    color: #fff;
+    margin-top: 10px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+        background: #1545d4;
+    }
+}
+
+// flex
+.gmap-flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+
+    .gmap-flex-item {
+        width: 100%;
+    }
+}
+
+// Pr link
+.gmap-pro-link {
+    width: 100%;
+    height: auto;
+    background: #395ae9;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    color: #fff;
+    p.title {
+        font-size: 20px;
+        line-height: 1.2;
+        font-weight: 500;
+    }
+
+    .features-list {
+        padding-left: 15px;
+    }
+
+    .features-list li {
+        font-size: 13px;
+        color: #eeeeee;
+    }
+    a.gmap-pro-link-text {
+        display: inline-block;
+        background: #ffffff;
+        padding: 0.75rem 1rem;
+        text-decoration: none;
+        border-radius: 3px;
+        color: #395ae9;
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 500;
+        margin-top: 15px;
+        text-align: center;
+    }
+}

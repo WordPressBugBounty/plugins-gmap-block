@@ -3,7 +3,7 @@
  * Plugin Name: Gmap Block
  * Description: A custom Gutenberg block to display google map in Gutenberg editor.
  * Author: Zakaria Binsaifullah
- * Version: 1.0.5
+ * Version: 1.2.3
  * Text Domain: gmap-block
  * Domain Path: /languages
  * License: GPLv2 or later
@@ -27,7 +27,7 @@ if ( ! class_exists( 'Gmap_Block ' ) ) {
 	final class GmapBlock {
 
 		// Plugin Version 
-		const VERSION = '1.0.5';
+		const VERSION = '1.2.3';
 
 		/**
 		 * Gmap Blocks Instance
@@ -44,7 +44,6 @@ if ( ! class_exists( 'Gmap_Block ' ) ) {
 		 */
 		private function __construct() {
 			$this->constants();
-			$this->init();
 			$this->includes();
 		}
 
@@ -55,37 +54,11 @@ if ( ! class_exists( 'Gmap_Block ' ) ) {
 		 * @return void
 		 */
 		public function constants() {
-			$this->define_constant( 'GMAP_VERSION', self::VERSION );
-			$this->define_constant( 'GMAP__FILE__', __FILE__ );
-			$this->define_constant( 'GMAP_URL_FILE', plugin_dir_url( __FILE__ ) );
-			$this->define_constant( 'GMAP_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
-			$this->define_constant( 'GMAP_URL', plugins_url( '/', plugin_dir_path( __FILE__ ) ) );
-		}
-
-		private function define_constant( $name, $value ) {
-			if ( ! defined( $name ) ) {
-				define( $name, $value );
-			}
-		}
-
-		/**
-		 * Gmap Blocks Init
-		 *
-		 * @since 1.0.0
-		 * @return void
-		 */
-		public function init() {
-			add_action( 'init', array( $this, 'load_textdomain' ) );
-		}
-
-		/**
-		 * Gmap Blocks Load Text Domain
-		 *
-		 * @since 1.0.0
-		 * @return void
-		 */
-		public function load_textdomain() {
-			load_plugin_textdomain( 'gmap-block', false, basename( GMAP_PLUGIN_DIR ) . '/languages' );
+			define( 'GMAP_VERSION', self::VERSION );
+			define( 'GMAP__FILE__', __FILE__ );
+			define( 'GMAP_URL_FILE', plugin_dir_url( __FILE__ ) );
+			define( 'GMAP_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+			define( 'GMAP_URL', plugins_url( '/', plugin_dir_path( __FILE__ ) ) );
 		}
 
 		/**
@@ -109,7 +82,6 @@ if ( ! class_exists( 'Gmap_Block ' ) ) {
 		 * @return void
 		 */
 		private function includes() {
-			require_once trailingslashit( GMAP_PLUGIN_DIR ) . 'sdk/sdk.php';
 			require_once trailingslashit( GMAP_PLUGIN_DIR ) . 'inc/gmap-block-loader.php';
 		}
 	}
