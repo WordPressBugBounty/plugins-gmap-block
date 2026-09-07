@@ -3,7 +3,7 @@
  * Plugin Name: Gmap Block
  * Description: A custom Gutenberg block to display google map in Gutenberg editor.
  * Author: Zakaria Binsaifullah
- * Version: 1.2.3
+ * Version: 1.2.4
  * Text Domain: gmap-block
  * Domain Path: /languages
  * License: GPLv2 or later
@@ -27,7 +27,7 @@ if ( ! class_exists( 'Gmap_Block ' ) ) {
 	final class GmapBlock {
 
 		// Plugin Version 
-		const VERSION = '1.2.3';
+		const VERSION = '1.2.4';
 
 		/**
 		 * Gmap Blocks Instance

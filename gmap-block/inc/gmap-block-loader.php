@@ -41,6 +41,16 @@ if ( ! class_exists( 'Gmap_Block_Loader' ) ) {
 			require_once trailingslashit( GMAP_PLUGIN_DIR ) . '/inc/classes/register-blocks.php';
 			require_once trailingslashit( GMAP_PLUGIN_DIR ) . '/inc/classes/enqueue-assets.php';
 			require_once trailingslashit( GMAP_PLUGIN_DIR ) . '/inc/classes/dynamic-style.php';
+
+			// Dashboard. The helpers are loaded everywhere so add-ons and the
+			// frontend can read the API key; the screen itself is admin only.
+			require_once trailingslashit( GMAP_PLUGIN_DIR ) . '/inc/admin/icons.php';
+			require_once trailingslashit( GMAP_PLUGIN_DIR ) . '/inc/admin/functions.php';
+			require_once trailingslashit( GMAP_PLUGIN_DIR ) . '/inc/admin/dashboard.php';
+
+			if ( is_admin() ) {
+				Gmap_Block_Dashboard::instance();
+			}
 		}
 	}
 	
